@@ -13,6 +13,7 @@ class BookManager extends Manager{
     }
 
     public function getBooks(){
+        $g = array();
         $req = $this->getDb()->query('SELECT books.id_books id_books,
                                              books.title title,
                                              books.author author,

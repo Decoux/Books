@@ -14,7 +14,10 @@ spl_autoload_register('chargerClasse');
 
 $bookManager = new BookManager;
 
-$books = $bookManager->getBooks();
+if($bookManager->getBooks()!=NULL){
+    $books = $bookManager->getBooks();
+}
+
 
 
 include "../views/booksVue.php";

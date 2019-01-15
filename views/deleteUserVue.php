@@ -3,7 +3,7 @@ include("template/header.php")
 ?>
  
   <section class="container">
-    <form action="deleteUser.php" method="post">
+    <form class="mt-5" action="deleteUser.php" method="post">
       <div class="input-group mb-3">
         <select name="identifiant" class="custom-select" id="inputGroupSelect02">
             <option selected>Choose...</option>

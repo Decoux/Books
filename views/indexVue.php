@@ -7,6 +7,7 @@ include("template/header.php")
       <p class="text-center">Formulaire de connexion</p>
       <label for="name">Mail : </label>
       <?php if(isset($errors['mail'])){ ?><div class="bg-danger p-1 rounded my-1 text-white font-weight-bold"> <?php echo $errors['mail']; }?></div>
+      <?php if(isset($errors['no-exist'])){ ?><div class="bg-danger p-1 rounded my-1 text-white font-weight-bold"> <?php echo $errors['no-exist']; }?></div>
       <input name="mail" class="form-control" type="text" placeholder="Entrez votre Email">
       <label for="name">Pass : </label>
       <?php if(isset($errors['pass'])){ ?><div class="bg-danger p-1 rounded my-1 text-white font-weight-bold"><?php echo $errors['pass'];  } ?></div>

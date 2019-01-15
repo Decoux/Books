@@ -216,19 +216,27 @@ footer{
 .absolute-book {
     position: absolute;
     top: 40px;
-
-
-
 }
+
 .opacityimg{
     opacity: 0.5;
         
 }
 
+.resume::first-letter {
+    font-size: 500%;
+    float: left;
+}
 
 .card__wrapper{
     transform-style: preserve-3d;
     animation: rotate-inverse 0.3s linear both;
+}
+
+.opacityInherit{
+    z-index: 1;
+    color: black;
+    font-weight: bold;
 }
 
 .size-div-img{

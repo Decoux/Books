@@ -4,7 +4,7 @@ include("template/header.php")
  
   <section class="container">
     <div class="d-flex flex-wrap">
-
+  <?php if(!empty($books)){ ?>
       <?php foreach($books as $book){ ?>
         
        <a href="book.php?id=<?php echo $book['book']->getId_books(); ?>" onmouseover="flip(this)" onmouseout="reFlip(this)" class="text card col-12 col-md-4 my-5 p-3">
@@ -21,6 +21,7 @@ include("template/header.php")
 
         </a>
       <?php } ?>
+   <?php } ?>
     </div>
     
       </section>

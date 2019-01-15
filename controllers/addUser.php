@@ -39,6 +39,7 @@ if(isset($_POST['name']) || isset($_POST['firstname'])){
         ]);
 
         $userManager->addUser($user);
+        header('Location: users.php');
     }
 }
 include "../views/addUserVue.php";

@@ -10,6 +10,7 @@ class UserManager extends Manager{
     }
 
     public function getUsers(){
+        $usersObj = array();
         $req = $this->getDb()->query('SELECT * FROM users');
         $users = $req->fetchAll(PDO::FETCH_ASSOC);
         foreach($users as $user){

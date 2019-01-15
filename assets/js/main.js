@@ -1,10 +1,14 @@
+//Animation for books display
 function flip(element){
     cardFlip = element.childNodes[5];
     
     
     // cardFlip.style.display = "none";
     cardFlip.setAttribute('class', 'absolute opacityimg card__wrapper sizeImgCard');
+    console.log(cardFlip);
+    
     secondCardFlip = element.childNodes[3];
+    secondCardFlip.setAttribute('class', 'resume opacityInherit px-2 back card__side--back is-switched card__wrapper text-wrap text-truncate');
     secondCardFlip.style.display="block";
     
 }
@@ -17,21 +21,14 @@ function reFlip(element){
     secondCardFlip.style.display = "none";
 }
 
-function flipBook(element) {
-    cardFlip = element.childNodes[5];
-    console.log(element.childNodes[5]);
+//Animation for details book
 
-    // cardFlip.style.display = "none";
-    cardFlip.setAttribute('class', 'absolute-book opacityimg card__wrapper col-md-12 size-div-img');
-    secondCardFlip = element.childNodes[3];
-    secondCardFlip.style.display = "block";
-
-}
-
-function reFlipBook(element) {
-    cardFlip = element.childNodes[5];
-    cardFlip.setAttribute('class', 'absolute-book col-md-12 size-div-img');
-
-    secondCardFlip = element.childNodes[3];
-    secondCardFlip.style.display = "none";
-}
+$(document).ready(function () {
+    $(".accordion p").hide();
+    $(".accordion h4").click(function () {
+        $(this).next("p").slideToggle("slow")
+            .siblings("p:visible").slideUp("slow");
+        $(this).toggleClass("active");
+        $(this).siblings("h4").removeClass("active");
+    });
+});

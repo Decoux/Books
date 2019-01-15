@@ -11,20 +11,17 @@ class AdminManager extends Manager{
     }
 
     public function adminExist(Admin $admin){
-        $req = $this->getDb()->prepare('SELECT * FROM admin WHERE firstname = :firstname AND mail = :mail');
-        $req->bindValue(':firstname', $admin->getFirstname(), PDO::PARAM_STR);
-        $req->bindValue(':mail', $admin->getMail(), PDO::PARAM_STR);
-        $req->execute();
-        $adminExist = $req->fetchAll(PDO::FETCH_ASSOC);
-        return $adminExist;
-    }
-
-    public function getAdmin(Admin $admin){
         $req = $this->getDb()->prepare('SELECT * FROM admin WHERE mail = :mail');
         $req->bindValue(':mail', $admin->getMail(), PDO::PARAM_STR);
         $req->execute();
-        $admin = $req->fetch(PDO::FETCH_ASSOC);  
-        $objAdmin = new Admin($admin); 
-        return $objAdmin;
+        $adminExist = $req->fetch(PDO::FETCH_ASSOC);
+        if($adminExist==TRUE){
+            $adminobj = new Admin($adminExist);
+            return $adminobj;
+        }else{
+            return;
+        }
     }
+
+
 }

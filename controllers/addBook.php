@@ -68,7 +68,7 @@ if(isset($_POST['title']) || isset($_POST['author']) || isset($_POST['date']) ||
         ]);
         
         $bookManager->addBook($book);
-        
+        header('Location: books.php');
     }
 }
 include "../views/addBookVue.php";

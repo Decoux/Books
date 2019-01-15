@@ -37,13 +37,15 @@ if(isset($_POST['mail']) || isset($_POST['pass'])){
             'mail' => $mail,
             'pass' => $pass
         ]);
-        $verifyAdmin = $adminManager->getAdmin($admin);
-        if(password_verify($_POST['pass'], $verifyAdmin->getPass())){
-            
-
-            $_SESSION['id'] = $verifyAdmin->getId();
-        }else{
+        if($adminManager->adminExist($admin)==NULL){
             $errors['no-exist'] = "Veuillez vous inscrire";
+        }else{
+            $verifyAdmin = $adminManager->adminExist($admin);
+            if(password_verify($_POST['pass'], $verifyAdmin->getPass())){
+                
+    
+                $_SESSION['id'] = $verifyAdmin->getId();
+            }
         }
         
     }
