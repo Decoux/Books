@@ -33,5 +33,26 @@ class UserManager extends Manager{
 
     }
 
+    public function getUser($id){
+        $req = $this->getDb()->prepare('SELECT * FROM users WHERE id_user = :id');
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
+        $req->execute();
+        $user_data = $req->fetch(PDO::FETCH_ASSOC);
+        $user = new User($user_data);
+        return $user;
+    }
+
+    public function updateUser($id, User $user){
+        $req = $this->getDb()->prepare('UPDATE users SET name = :name, firstname = :firstname WHERE id_user = :id');
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
+        $req->bindValue(':firstname', $user->getFirstname(), PDO::PARAM_STR);
+        $req->bindValue(':name', $user->getName(), PDO::PARAM_STR);
+        $req->execute();
+
+
+
+
+
+    }
 
 }

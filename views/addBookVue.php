@@ -3,7 +3,7 @@ include("template/header.php")
 ?>
  
   <section class="container">
-    <form class="mt-5 d-flex flex-column" action="addBook.php" method="post" enctype="multipart/form-data">
+    <form class="mt-5 d-flex flex-column col-md-6 mx-auto" action="addBook.php" method="post" enctype="multipart/form-data">
         <p class="text-center">Ajouter un livre</p>
         <label for="title">Titre : </label>
         <?php if(isset($errors['title'])){ ?> <div class="bg-danger p-1 rounded my-1 text-white font-weight-bold"> <?php echo $errors['title']; } ?></div>

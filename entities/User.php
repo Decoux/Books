@@ -6,7 +6,8 @@ class User extends Entity{
     protected $name,
               $firstname,
               $identifiant,
-              $id_user;
+              $id_user,
+              $id_book_borrow;
 
               
 
@@ -88,6 +89,28 @@ class User extends Entity{
     public function setId_user($id_user)
     {
         $this->id_user = $id_user;
+
+        return $this;
+    }
+
+
+
+    /**
+     * Get the value of id_book_borrow
+     */ 
+    public function getId_book_borrow()
+    {
+        return $this->id_book_borrow;
+    }
+
+    /**
+     * Set the value of id_book_borrow
+     *
+     * @return  self
+     */ 
+    public function setId_book_borrow($id_book_borrow)
+    {
+        $this->id_book_borrow = $id_book_borrow;
 
         return $this;
     }

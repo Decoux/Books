@@ -3,7 +3,7 @@
  ?>
  
   <section class="container">
-    <form class="mt-5 px-3 py-5 border border-light d-flex flex-column" action="register.php" method="post">
+    <form class="mt-5 px-3 py-5 border border-light d-flex flex-column col-md-6 mx-auto" action="register.php" method="post">
       <p class="text-center">Formulaire d'inscription</p>
       <label for="name">Prénom : </label>
       <?php if (isset($errors['firstname'])) { ?><div class="bg-danger p-1 rounded my-1 text-white font-weight-bold"><?php echo $errors['firstname']; } ?></div>

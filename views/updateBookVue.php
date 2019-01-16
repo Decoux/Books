@@ -38,3 +38,6 @@ include("template/header.php")
     </form>
     <?php } ?>
   </section>
+    <?php
+    include("template/footer.php")
+    ?>

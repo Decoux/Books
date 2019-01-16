@@ -3,7 +3,7 @@ include("template/header.php")
 ?>
  
   <section class="container">
-    <form class="mt-5 d-flex flex-column" action="addUser.php" method="post">
+    <form class="mt-5 d-flex flex-column col-md-6 mx-auto" action="addUser.php" method="post">
       <p class="text-center">Ajouter un utilisateur</p>
         <label for="name">Nom : </label>
         <?php if(isset($errors['name'])){ ?> <div class="bg-danger p-1 rounded my-1 text-white font-weight-bold"><?php echo $errors['name']; } ?></div>
